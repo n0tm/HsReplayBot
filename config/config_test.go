@@ -10,6 +10,7 @@ var testPathToConfig = path.Join(baseDirPath, "config.test.json")
 
 func TestParseByPathWhenPathExist(t *testing.T) {
 	t.Parallel()
+
 	config := new(Config)
 	assert.Empty(t, config.Bot)
 	assert.Nil(t, config.ParseByPath(testPathToConfig))
@@ -20,8 +21,10 @@ func TestParseByPathWhenPathExist(t *testing.T) {
 
 func TestParseByPathWhenPathNotExist(t *testing.T) {
 	t.Parallel()
+
 	config := new(Config)
 	assert.Empty(t, config.Bot)
+
 	nonExistingPath := "::non existing path::"
 	assert.EqualError(t, config.ParseByPath(nonExistingPath), "invalid argument")
 	assert.Empty(t, config.Bot)
