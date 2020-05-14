@@ -5,9 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    working_dir: /go/src/github.com/HsReplayBot
     image: library/golang:onbuild
     volumes:
-      - .:/go/src/hs_replay_bot
+      - .:/go/src/github.com/HsReplayBot
     tty: true
     command: tail -f /dev/null
     links:
