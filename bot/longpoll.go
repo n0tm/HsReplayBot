@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"../config"
+	"github.com/HsReplayBot/config"
 	"github.com/SevereCloud/vksdk/api"
 	"github.com/SevereCloud/vksdk/api/params"
 	"github.com/SevereCloud/vksdk/longpoll-bot"
