@@ -1,0 +1,6 @@
+{
+  "bot": {
+    "group_id": 12345,
+    "access_token": "::test token::"
+  }
+}
