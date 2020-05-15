@@ -1,4 +1,4 @@
-module github.com/HsReplayBot
+module github.com/n0tm/HsReplayBot
 
 go 1.14
 

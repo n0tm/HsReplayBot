@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
-	"github.com/HsReplayBot/config"
 	"github.com/SevereCloud/vksdk/api"
 	"github.com/SevereCloud/vksdk/api/params"
 	"github.com/SevereCloud/vksdk/longpoll-bot"
 	"github.com/SevereCloud/vksdk/object"
+	"github.com/n0tm/HsReplayBot/config"
 )
 
 func main() {
