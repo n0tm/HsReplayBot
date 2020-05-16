@@ -12,7 +12,7 @@ func TestLoader_LoadWhenRootPathExist(t *testing.T) {
 	t.Parallel()
 
 	currentDirectoryPath, _ := os.Getwd()
-	pathToConfig := path.Join(currentDirectoryPath, "config.json")
+	pathToConfig := path.Join(currentDirectoryPath, "config.test.json")
 
 	configLoader := config.Loader{ConfigPath: pathToConfig}
 	service, err := configLoader.Load()

@@ -1,0 +1,6 @@
+{
+  "bot": {
+    "group_id": 0,
+    "access_token": "your community access token"
+  }
+}
