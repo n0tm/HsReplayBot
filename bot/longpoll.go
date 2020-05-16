@@ -1,18 +1,18 @@
 package main
 
 import (
-	"log"
-
 	"github.com/SevereCloud/vksdk/api"
 	"github.com/SevereCloud/vksdk/api/params"
 	"github.com/SevereCloud/vksdk/longpoll-bot"
 	"github.com/SevereCloud/vksdk/object"
-	"github.com/n0tm/HsReplayBot/config"
+	"github.com/n0tm/HsReplayBot/app"
+	"log"
 )
 
+var application = app.Init()
+
 func main() {
-	configData, _ := config.Get()
-	vk := api.NewVK(configData.Bot.AccessToken)
+	vk := api.NewVK(application.Config.Bot.AccessToken)
 
 	// Получаем информацию о группе
 	group, err := vk.GroupsGetByID(api.Params{})
