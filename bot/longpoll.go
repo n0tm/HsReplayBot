@@ -12,7 +12,7 @@ import (
 var application = app.Init()
 
 func main() {
-	vk := api.NewVK(application.Config.Bot.AccessToken)
+	vk := api.NewVK(application.Services.Config.Bot.AccessToken)
 
 	// Получаем информацию о группе
 	group, err := vk.GroupsGetByID(api.Params{})

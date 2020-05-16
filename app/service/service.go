@@ -1,5 +1,5 @@
 package service
 
 type Loader interface {
-	Load()
+	Load() (interface{}, error)
 }

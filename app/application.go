@@ -9,13 +9,35 @@ import (
 func Init() *application {
 	application := new(application)
 
-	application.Path.Load()
-	application.Config.Load()
+	application.Services.load()
 
 	return application
 }
 
 type application struct {
-	Config configService.Config
-	Path   pathService.Path
+	Services Services
+}
+
+type Services struct {
+	Config *configService.Config
+	Path   *pathService.Path
+}
+
+func (s *Services) load() {
+	pathLoader := new(pathService.Loader)
+
+	loadedPathService, err := pathLoader.Load()
+	if err != nil {
+		panic(err.Error())
+	}
+
+	s.Path = loadedPathService.(*pathService.Path)
+
+	configLoader := configService.Loader{ConfigPath: s.Path.ConfigPath}
+	loadedConfigService, err := configLoader.Load()
+	if err != nil {
+		panic(err.Error())
+	}
+
+	s.Config = loadedConfigService.(*configService.Config)
 }
