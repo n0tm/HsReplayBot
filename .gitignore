@@ -1,2 +1,3 @@
 Gopkg.lock
 vendor
+app/service/config/config.json
